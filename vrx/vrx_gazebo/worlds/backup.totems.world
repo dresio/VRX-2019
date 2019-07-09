@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<!-- World containing sandisland model and some course challenges -->
+<sdf version="1.6" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- <world name="lawn_mower_obstacles"> -->
+  <world name="robotx_example_course">
+    <!-- <xacro:include filename="$(find vmrc_gazebo)/worlds/sandisland.xacro" /> -->
+    <xacro:include filename="$(find vrx_gazebo)/worlds/sandisland.xacro" />
+    <xacro:sandisland />
+
+    <!-- <include> -->
+    <!--   <uri>model://robotx_navigation_challenge</uri> -->
+    <!--   <pose>15 0 2 0 0 0</pose> -->
+    <!-- </include> -->
+
+    <!-- <include> -->
+    <!--   <uri>model://robotx_2016_qualifying_pinger_transit</uri> -->
+    <!--   <pose>15 0 0 0 0 0</pose> -->
+    <!-- </include> -->
+
+    <include>
+      <name>polyform_a7</name>
+      <uri>model://polyform_a7</uri>
+      <pose>70 50 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>light</name>
+      <uri>model://robotx_light_buoy</uri>
+      <pose>30 30 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <name>light_1</name>
+      <uri>model://robotx_light_buoy</uri>
+      <pose>0 30 0 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>
+
