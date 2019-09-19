@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include "ros/ros.h"
 #include <cv_bridge/cv_bridge.h>
-#include <color_detection/color_detection.h>
+#include <color_classification/color_classification.h>
 #include <ros/package.h>
 
 using namespace cv;
@@ -54,8 +54,8 @@ int main(int argc, char **argv)
         cv_image.encoding = sensor_msgs::image_encodings::BGR8;
 
 
-        ros::ServiceClient client = nh.serviceClient<color_detection::color_detection>("color_detection");
-        color_detection::color_detection srv;
+        ros::ServiceClient client = nh.serviceClient<color_classification::color_classification>("color_classification");
+        color_classification::color_classification srv;
         cv_image.toImageMsg(srv.request.image);
         
         cout << "blue:" ;
@@ -127,8 +127,8 @@ int main(int argc, char **argv)
         cv_image.encoding = sensor_msgs::image_encodings::BGR8;
 
 
-        ros::ServiceClient client = nh.serviceClient<color_detection::color_detection>("color_detection");
-        color_detection::color_detection srv;
+        ros::ServiceClient client = nh.serviceClient<color_classification::color_classification>("color_classification");
+        color_classification::color_classification srv;
         cv_image.toImageMsg(srv.request.image);
         
         cout << "green:";
@@ -201,8 +201,8 @@ int main(int argc, char **argv)
         cv_image.encoding = sensor_msgs::image_encodings::BGR8;
 
 
-        ros::ServiceClient client = nh.serviceClient<color_detection::color_detection>("color_detection");
-        color_detection::color_detection srv;
+        ros::ServiceClient client = nh.serviceClient<color_classification::color_classification>("color_classification");
+        color_classification::color_classification srv;
         cv_image.toImageMsg(srv.request.image);
         
         cout << "red:";
@@ -276,8 +276,8 @@ int main(int argc, char **argv)
         cv_image.encoding = sensor_msgs::image_encodings::BGR8;
 
 
-        ros::ServiceClient client = nh.serviceClient<color_detection::color_detection>("color_detection");
-        color_detection::color_detection srv;
+        ros::ServiceClient client = nh.serviceClient<color_classification::color_classification>("color_classification");
+        color_classification::color_classification srv;
         cv_image.toImageMsg(srv.request.image);
         
         cout << "black:";

@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <ros/ros.h>
 #include <cv_bridge/cv_bridge.h>
-#include <color_detection/color_detection.h>
+#include <color_classification/color_classification.h>
 #include <string>
 
 #define M_PI 3.14159265358979323846  /* pi */

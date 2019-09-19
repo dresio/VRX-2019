@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(color_detection)
+project(color_classification)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -59,7 +59,7 @@ find_package(catkin REQUIRED COMPONENTS
 # Generate services in the 'srv' folder
 add_service_files(
   FILES
-  color_detection.srv
+  color_classification.srv
 )
 
 ## Generate actions in the 'action' folder
@@ -107,7 +107,7 @@ generate_messages(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 # INCLUDE_DIRS include
-#  LIBRARIES color_shape_detection
+#  LIBRARIES color_shape_classification
 #  CATKIN_DEPENDS OpenCV cv_bridge image_transport roscpp std_msgs sensor_msgs message_runtime
 #  DEPENDS system_lib
 )
@@ -125,7 +125,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/color_shape_detection.cpp
+#   src/${PROJECT_NAME}/color_classification.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -136,7 +136,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/color_shape_detection_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/color_shape_classification_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -193,7 +193,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_color_shape_detection.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_color_shape_classification.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
@@ -201,12 +201,12 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(color_detection src/color_detection.cpp)
+add_executable(color_classification src/color_classification.cpp)
 add_executable(test_from_image src/test_from_image.cpp)
 add_executable(record_hist src/record_hist.cpp)
-target_link_libraries(color_detection ${catkin_LIBRARIES} )
+target_link_libraries(color_classification ${catkin_LIBRARIES} )
 target_link_libraries(test_from_image ${catkin_LIBRARIES} )
 target_link_libraries(record_hist ${catkin_LIBRARIES} )
-add_dependencies(color_detection ${catkin_EXPORTED_TARGETS})
+add_dependencies(color_classification ${catkin_EXPORTED_TARGETS})
 add_dependencies(test_from_image ${catkin_EXPORTED_TARGETS})
 add_dependencies(record_hist ${catkin_EXPORTED_TARGETS})
